@@ -1,0 +1,31 @@
+{
+	"name": "openregion/phpcades-stubs",
+	"description": "Аннотации к phpcades (php_CPCSP/libphpcades/libphpcades.so/CryptoPro/КриптоПро)",
+	"keywords": [
+		"КриптоПро",
+		"CryptoPro",
+		"php_CPCSP",
+		"libphpcades",
+		"libphpcades.so",
+		"phpcades",
+		"stubs"
+	],
+	"license": "MIT",
+	"require-dev": {
+		"laminas/laminas-code": "^4.13"
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"OpenRegion\\PhpcadesMeta\\" : "src/"
+		}
+	},
+	"suggest": {
+		"ext-php_CPCSP": "(libphpcades.so) Required for stubs generation"
+	},
+	"scripts": {
+		"generate": "@php generate.php"
+	},
+	"archive": {
+		"exclude": ["/src", "/generate.php"]
+	}
+}

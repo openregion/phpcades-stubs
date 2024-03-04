@@ -1,0 +1,44 @@
+<?php
+
+namespace OpenRegion\PhpcadesMeta;
+
+class CPStorePhpStormMeta implements PhpStormMetaInterface
+{
+  public static function getMeta(): string
+  {
+    return <<<'PHP'
+  expectedArguments(
+    \CPStore::Open(),
+    0,
+    ACTIVE_DIRECTORY_USER_STORE,
+    CURRENT_USER_STORE,
+    LOCAL_MACHINE_STORE,
+    MEMORY_STORE,
+    SMART_CARD_USER_STORE,
+  );
+
+  expectedArguments(
+    \CPStore::Open(),
+    2,
+    STORE_OPEN_MAXIMUM_ALLOWED,
+    STORE_OPEN_READ_ONLY,
+    STORE_OPEN_READ_WRITE,
+    STORE_OPEN_MAXIMUM_ALLOWED | STORE_OPEN_EXISTING_ONLY,
+    STORE_OPEN_READ_ONLY | STORE_OPEN_EXISTING_ONLY,
+    STORE_OPEN_READ_WRITE | STORE_OPEN_EXISTING_ONLY,
+    STORE_OPEN_MAXIMUM_ALLOWED | STORE_OPEN_INCLUDE_ARCHIVED,
+    STORE_OPEN_READ_ONLY | STORE_OPEN_INCLUDE_ARCHIVED,
+    STORE_OPEN_READ_WRITE | STORE_OPEN_INCLUDE_ARCHIVED,
+  );
+
+  expectedReturnValues(
+    \CPStore::get_Location(),
+    ACTIVE_DIRECTORY_USER_STORE,
+    CURRENT_USER_STORE,
+    LOCAL_MACHINE_STORE,
+    MEMORY_STORE,
+    SMART_CARD_USER_STORE,
+  );
+PHP;
+  }
+}

@@ -1,0 +1,11 @@
+# ide
+.idea/
+.vscode/
+
+# mac
+.DS_Store
+
+# composer
+/auth.json
+/composer.lock
+/vendor
